@@ -1,6 +1,7 @@
 """Embedding generator and Qdrant storage for policy chunks."""
 
 import logging
+import uuid
 
 from openai import AsyncAzureOpenAI
 from qdrant_client import QdrantClient
@@ -53,7 +54,7 @@ class PolicyEmbedder:
 
         points = [
             PointStruct(
-                id=f"{chunk['platform']}:{chunk['url']}:{chunk['chunk_index']}",
+                id=str(uuid.uuid5(uuid.NAMESPACE_URL, f"{chunk['platform']}:{chunk['url']}:{chunk['chunk_index']}")),
                 vector=embedding,
                 payload={
                     "platform": chunk["platform"],
