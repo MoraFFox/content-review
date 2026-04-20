@@ -12,4 +12,9 @@ class WhisperService:
 
     def transcribe(self, audio_path: str) -> dict:
         """Transcribe audio file to text."""
-        raise NotImplementedError
+        result = self.model.transcribe(audio_path)
+        return {
+            "text": result["text"],
+            "segments": result["segments"],
+            "language": result["language"],
+        }
