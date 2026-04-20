@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     azure_api_key: str = ""
     azure_endpoint: str = ""
     azure_api_version: str = "2024-10-21"
+    azure_embedding_deployment: str = "text-embedding-ada-002"
 
     # Azure Vision (optional)
     azure_vision_key: str = ""
