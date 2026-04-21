@@ -31,6 +31,7 @@ dependencies = [
     "pydantic>=2.9.0",
     "pydantic-settings>=2.6.0",
     "python-multipart>=0.0.17",
+    "httpx>=0.28.0",
     "ffmpeg-python>=0.2.0",
     "google-generativeai>=0.8.0",
     "langchain-google-genai>=2.0.0",
